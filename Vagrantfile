@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 9090, host: 9090
-  config.vm.synced_folder "workshop/", "/home/vagrant/workshop"
+  config.vm.synced_folder "./workshop/", "/home/vagrant/workshop"
 
   config.vm.provision :shell, :path => "install.sh"
 end
