@@ -1,0 +1,14 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "Basic Node server FLISOL Workshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Juan Carlos Ruiz <JuanCrg90@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

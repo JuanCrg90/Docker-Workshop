@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  database:
+    image: mysql
+    hostname: database
+    networks:
+      - flisol
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+
+  wordpress:
+      image: wordpress
+      networks:
+        - flisol
+      ports:
+        - "8080:80"
+      environment:
+        WORDPRESS_DB_HOST: database
+        WORDPRESS_DB_USER: user
+        WORDPRESS_DB_PASSWORD: 123456
+
+networks:
+  flisol:
+    driver: bridge
