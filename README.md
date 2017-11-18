@@ -1,6 +1,6 @@
-# FLISOL Docker Workshop Vagrant 
+# Docker Workshop Vagrant 
 
-This Vagrant is a very simple implementation for the FLISOL León 2017 Docker Workshop.
+This Vagrant is a very simple implementation for the Docker Workshop.
 
 ## USE
 **You need to have installed [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/) in your system**
