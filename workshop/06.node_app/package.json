@@ -1,7 +1,7 @@
 {
   "name": "node_app",
   "version": "1.0.0",
-  "description": "Basic Node server FLISOL Workshop",
+  "description": "Basic Node server Docker Workshop",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

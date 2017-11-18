@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  webapp:
+    build: ./docker-workshop-app
+    depends_on:
+      - postgres
+    environment:
+      - RAILS_PORT=3000
+      - DB_USERNAME=user
+      - DB_PASSWORD=password
+      - DB_HOST=postgres
+    volumes:
+      - './docker-workshop-app/:/usr/src/app'
+    ports:
+      - '3000:3000'
+    networks:
+      - workshop
+    stdin_open: true
+    tty: true
+    working_dir: '/usr/src/app'
+    command:
+      - /bin/bash
+      - -c
+      - bundle install --jobs 20 --retry 5; npm install; rm ./tmp/pids/server.pid; rails db:setup db:seed; rails s
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    networks:
+      - workshop
+    ports:
+      - '5432:5432'
+    volumes:
+      - './postgres:/var/lib/postgresql/data'
+
+networks:
+  workshop:
+    driver: bridge

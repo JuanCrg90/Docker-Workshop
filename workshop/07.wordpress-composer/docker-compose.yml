@@ -1,11 +1,11 @@
-version: '2'
+version: '3'
 
 services:
   database:
     image: mysql
     hostname: database
     networks:
-      - flisol
+      - workshop
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
@@ -15,14 +15,14 @@ services:
   wordpress:
       image: wordpress
       networks:
-        - flisol
+        - workshop
       ports:
-        - "8080:80"
+        - "8888:80"
       environment:
         WORDPRESS_DB_HOST: database
         WORDPRESS_DB_USER: user
         WORDPRESS_DB_PASSWORD: 123456
 
 networks:
-  flisol:
+  workshop:
     driver: bridge
