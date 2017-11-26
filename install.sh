@@ -31,6 +31,8 @@ sudo docker pull wordpress
 sudo docker pull mysql
 sudo docker pull ghost
 sudo docker pull node
+sudo docker pull ruby
+sudo docker pull postgres
 
 sudo apt-get install -y  python-pip
 sudo pip install docker-compose
