@@ -1,5 +1,5 @@
 # Docker Workshop 
-This is a simple workshop designed to learn the Docker fundamentals. you can do the excersices in your machine installing the docker engine from the [official Docker site](https://www.docker.com). If you don't want to install docker in your machine you can use thevagrant machine contained in this repository. 
+This is a simple workshop designed to learn the Docker fundamentals. you can do the excersices in your machine installing the docker engine from the [official Docker site](https://www.docker.com). If you don't want to install docker in your machine you can use the vagrant machine contained in this repository. 
 
 ### Donate
 If you find useful this material, don't hesitate in invite me a coffee.
