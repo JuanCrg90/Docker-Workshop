@@ -2,7 +2,7 @@ version: '3'
 
 services:
   database:
-    image: mysql
+    image: mysql:5.7
     hostname: database
     networks:
       - workshop
@@ -13,15 +13,15 @@ services:
       MYSQL_PASSWORD: 123456
 
   wordpress:
-      image: wordpress
-      networks:
-        - workshop
-      ports:
-        - "8888:80"
-      environment:
-        WORDPRESS_DB_HOST: database
-        WORDPRESS_DB_USER: user
-        WORDPRESS_DB_PASSWORD: 123456
+    image: wordpress
+    networks:
+      - workshop
+    ports:
+      - 8888:80
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: 123456
 
 networks:
   workshop:
